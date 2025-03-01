@@ -1,10 +1,14 @@
 pipeline {
     agent any
 
+    environment {
+        GIT_CREDENTIALS = 'git-hub-pat' // Replace with your Jenkins credentials ID
+    }
+
     stages {
         stage('Clone Repository') {
             steps {
-                git 'https://github.com/yourusername/terraform-jenkins-ci-cd.git'
+                git credentialsId: "${GIT_CREDENTIALS}", url: 'https://github.com/nageswararao1999/terraform-aws-infra.git'
             }
         }
 
