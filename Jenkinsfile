@@ -8,7 +8,7 @@ pipeline {
     stages {
         stage('Clone Repository') {
             steps {
-                git credentialsId: "${GIT_CREDENTIALS}", url: 'https://github.com/nageswararao1999/terraform-aws-infra.git'
+                git credentialsId: "${GIT_CREDENTIALS}", url: 'https://github.com/nageswararao1999/terraform-aws-infra.git', branch : 'main'
             }
         }
 
